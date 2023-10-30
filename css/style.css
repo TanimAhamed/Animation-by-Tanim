@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+
+.box{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background:#1c1c1c;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background:linear-gradient(0deg,transparent,transparent,#da1529,
+    #16d5e2,#4012d6);
+    z-index: 1;
+    animation: animate 2s linear infinite;
+    transform-origin: bottom right;
+
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background:linear-gradient(0deg,transparent,transparent,#369fdf,
+    #45f3ff,#45f3ff);
+    z-index: 1;
+    animation: animate 2s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.box .from{
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+}
+.from h2{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(43, 165, 217);
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.1em;
+}
+
+.from .input_box{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+
+}
+.from .input_box input{
+    position:relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color:#452;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.from .input_box span{
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+
+}
+.box .from .input_box input:valid ~ span,
+.box .from .input_box input:focus ~ span
+{
+    color: #0000;
+    font-size: 0.75em;
+    transform: translateY(-20px);
+}
+.box .from .input_box i{
+    position: absolute;
+    left: 0;
+    bottom:0 ;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+.box .from .input_box input:valid ~ i,
+.box .from .input_box input:focus ~ i
+{
+    height: 44px;
+
+
+}
+.box .from .link{
+    display: flex;
+    justify-content: space-between;
+}
+.box .from .link a{
+    margin: 17px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.box .from .link a:hover,
+.box .from .link a:nth-child(2)
+{
+    color: #fff;
+}
+.box .from input[Type="submit"]:active{
+    opacity: 0.8;
+}
+.login{
+    margin-top: 20px;
+    width: 20%;
+    height: 30px;
+    background: #d3d3d3;
+    border-radius:10px;
+    border: none;
+    transition: all linear 0.3s;
+}
+.login:hover{
+    color:black;
+    background: #45f3ff;
+}
